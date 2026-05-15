@@ -57,6 +57,13 @@ svg {
   flex: 0 0 auto;
 }
 
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .page {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
