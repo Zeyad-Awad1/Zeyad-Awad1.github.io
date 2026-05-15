@@ -73,10 +73,10 @@ svg {
 .hero {
   display: grid;
   grid-template-columns: 210px minmax(0, 1fr);
-  gap: 28px;
+  gap: 30px;
   align-items: center;
   margin-bottom: 14px;
-  padding: 24px;
+  padding: 26px;
   border: 1px solid var(--border);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.96);
@@ -138,7 +138,7 @@ svg {
 
 .hero-content p {
   max-width: 780px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   color: #183056;
   font-size: 16px;
   line-height: 1.58;
@@ -147,16 +147,18 @@ svg {
 .cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  gap: 14px;
+  margin-top: 2px;
 }
 
 .btn {
-  min-height: 46px;
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  padding: 10px 15px;
+  gap: 11px;
+  padding: 10px 16px;
   border: 1px solid #b9cdec;
   border-radius: 10px;
   background: var(--white);
@@ -176,11 +178,19 @@ svg {
 }
 
 .btn-primary {
-  min-width: 168px;
+  min-width: 182px;
+  min-height: 52px;
+  padding: 10px 20px;
   border-color: transparent;
   background: linear-gradient(135deg, #005de8, var(--blue-strong));
   color: var(--white);
   box-shadow: 0 14px 26px rgba(0, 71, 199, 0.24);
+}
+
+.btn-primary span {
+  display: grid;
+  gap: 1px;
+  line-height: 1.08;
 }
 
 .btn-primary:hover,
@@ -191,7 +201,6 @@ svg {
 
 .btn small {
   display: block;
-  margin-top: 1px;
   font-size: 11px;
   font-weight: 650;
   opacity: 0.86;
@@ -201,6 +210,17 @@ svg {
   width: 18px;
   height: 18px;
   color: currentColor;
+}
+
+.linkedin-mark {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: 1px solid #b9cdec;
+  border-radius: 7px;
+  background: #ffffff;
+  color: var(--blue);
+  box-shadow: 0 4px 10px rgba(0, 71, 199, 0.1);
 }
 
 .card,
@@ -298,22 +318,22 @@ svg {
 
 .chips {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 9px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .skill {
   min-width: 0;
-  min-height: 42px;
+  min-height: 46px;
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 9px 11px;
+  padding: 10px 11px;
   border: 1px solid #dce8f7;
   border-radius: 10px;
   background: #fbfdff;
   color: var(--navy);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 780;
   line-height: 1.25;
   box-shadow: 0 5px 14px rgba(6, 27, 67, 0.03);
@@ -492,17 +512,17 @@ svg {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 10px;
 }
 
 .contact-grid div,
 .contact-grid a {
   min-width: 0;
-  min-height: 44px;
+  min-height: 46px;
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   padding: 10px 11px;
   border: 1px solid #dce8f7;
   border-radius: 10px;
@@ -511,8 +531,28 @@ svg {
   text-decoration: none;
   font-size: 13px;
   font-weight: 760;
-  overflow-wrap: anywhere;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.contact-location,
+.contact-whatsapp,
+.contact-download {
+  grid-column: span 2;
+}
+
+.contact-email,
+.contact-linkedin {
+  grid-column: span 3;
+}
+
+.contact-text {
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.contact-email .contact-text {
+  font-size: 12.5px;
+  white-space: nowrap;
 }
 
 .contact-grid a:hover,
@@ -522,6 +562,11 @@ svg {
   color: var(--blue);
   box-shadow: 0 10px 20px rgba(6, 27, 67, 0.07);
   outline: none;
+}
+
+.contact-grid .linkedin-mark {
+  width: 24px;
+  height: 24px;
 }
 
 .footer {
@@ -552,12 +597,25 @@ svg {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .chips,
   .domain-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .credentials-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-location,
+  .contact-whatsapp,
+  .contact-email,
+  .contact-linkedin,
+  .contact-download {
+    grid-column: auto;
   }
 }
 
@@ -601,6 +659,7 @@ svg {
 
   .cta-row {
     justify-content: center;
+    gap: 10px;
   }
 
   .btn {
@@ -615,7 +674,8 @@ svg {
     padding: 17px;
   }
 
-  .chips {
+  .chips,
+  .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -665,6 +725,11 @@ svg {
 
   .domain-card {
     min-height: 0;
+  }
+
+  .contact-email .contact-text {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .footer {
