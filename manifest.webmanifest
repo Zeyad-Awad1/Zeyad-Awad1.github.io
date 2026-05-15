@@ -9,7 +9,7 @@
   "theme_color": "#0047c7",
   "icons": [
     {
-      "src": "assets/za-app-icon.png",
+      "src": "assets/za-app-icon-v2.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
